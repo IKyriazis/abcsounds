@@ -1,43 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>ABC SOUNDS</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="title">
+      <p>ABC SOUNDS</p>
+    </div>
+    <div id="selector">
+      <input type="radio" checked="checked" name="selector" value="name">Letter Names
+      <input type="radio" name="selector" value="sound">Letter Sounds
+    </div>
+    <div id="letters">
+      <div id="A">
+        <img src="A.png">
+      </div>
+      <div id="B">
+        <img src="B.png">
+      </div>
+      <div id="C">
+        <img src="C.png">
+      </div>
+      <div id="D">
+        <img src="D.png">
+      </div>
+      <div id="E">
+        <img src="E.png">
+      </div>
+      <div id="F">
+        <img src="F.png">
+      </div>
+      <div id="G">
+        <img src="G.png">
+      </div>
+      <div id="H">
+        <img src="H.png">
+      </div>
+      <div id="I">
+        <img src="I.png">
+      </div>
+      <div id="J">
+        <img src="J.png">
+      </div>
+      <div id="K">
+        <img src="K.png">
+      </div>
+      <div id="L">
+        <img src="L.png">
+      </div>
+      <div id="M">
+        <img src="M.png">
+      </div>
+      <div id="N">
+        <img src="N.png">
+      </div>
+      <div id="O">
+        <img src="O.png">
+      </div>
+      <div id="P">
+        <img src="P.png">
+      </div>
+      <div id="Q">
+        <img src="Q.png">
+      </div>
+      <div id="R">
+        <img src="R.png">
+      </div>
+      <div id="S">
+        <img src="S.png">
+      </div>
+      <div id="T">
+        <img src="T.png">
+      </div>
+      <div id="U">
+        <img src="U.png">
+      </div>
+      <div id="V">
+        <img src="V.png">
+      </div>
+      <div id="W">
+        <img src="W.png">
+      </div>
+      <div id="X">
+        <img src="X.png">
+      </div>
+      <div id="Y">
+        <img src="Y.png">
+      </div>
+      <div id="Z">
+        <img src="Z.png">
+      </div>
+    </div>
+    <script>
+      let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      for (i = 0; i < letters.length; i++) {
+        console.log(document.getElementById(letters[i]))
+        document.getElementById(letters[i]).addEventListener("click", function () {
+          onLetterClick(event);
+        });
+      }
+      function onLetterClick(event) {
+        let selector = document.getElementsByName("selector");
+        let letter = event.currentTarget.id.toLowerCase();
+        let selectorValue;
+        for (i = 0; i < selector.length; i++) {
+          if (selector[i].checked) {
+            console.log(selector[i].value)
+            selectorValue = selector[i].value;
+          }
+        }
+        let audio = new Audio(letter + selectorValue + ".mp3")
+        audio.play()
+      }
+    </script>
   </body>
 </html>

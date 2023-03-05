@@ -1,0 +1,19 @@
+#letters {
+    display: flex;
+    flex-wrap: wrap;
+}
+#letters img {
+    height: 175px;
+    width: 175px;
+}
+#title {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
